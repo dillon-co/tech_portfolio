@@ -1,0 +1,7 @@
+<h1>Request A Service</h1>
+
+<% if client_signed_in? %>
+  <%= render 'form', service_request: @service_request %>
+
+  <%= link_to 'Back', service_requests_path %>
+<% end %>

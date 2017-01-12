@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: service_requests
+#
+#  id           :integer          not null, primary key
+#  client_id    :integer
+#  title        :string
+#  description  :string
+#  project_type :integer
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  client: one
+  title: MyString
+  description: MyString
+  project_type: 1
+
+two:
+  client: two
+  title: MyString
+  description: MyString
+  project_type: 1

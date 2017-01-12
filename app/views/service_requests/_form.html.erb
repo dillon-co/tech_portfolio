@@ -1,0 +1,32 @@
+<%= form_for(service_request) do |f| %>
+  <% if service_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(service_request.errors.count, "error") %> prohibited this service_request from being saved:</h2>
+
+      <ul>
+      <% service_request.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :project_type %>
+    <%= f.select :project_type, :collection => ServiceRequest.project_types.keys.to_a %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

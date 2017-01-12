@@ -1,0 +1,33 @@
+# == Schema Information
+#
+# Table name: services
+#
+#  id           :integer          not null, primary key
+#  client_id    :integer
+#  name         :string           not null
+#  project_url  :string
+#  description  :text
+#  service_type :integer          not null
+#  hours        :float            not null
+#  recurring    :boolean          default("false")
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  service_type: 1
+  hours: 1.5
+  description: MyText
+  project_url: MyString
+  client: one
+
+two:
+  name: MyString
+  service_type: 1
+  hours: 1.5
+  description: MyText
+  project_url: MyString
+  client: two

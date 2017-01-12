@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: admins
+# Table name: clients
 #
 #  id                     :integer          not null, primary key
 #  name                   :string           default(""), not null
@@ -18,9 +18,10 @@
 #  updated_at             :datetime         not null
 #
 
-class Admin < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+require 'test_helper'
+
+class ClientTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

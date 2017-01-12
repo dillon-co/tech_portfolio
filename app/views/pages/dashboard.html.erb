@@ -1,0 +1,40 @@
+<h1>Admin Dashboard</h1>
+<div class="row container-fluid">
+  <div class='row container'>
+    <h3>Project Requests</h3>
+  </div>
+  <div class='col-lg-4 jumbotron'>
+    <h1><%= @requested_apps || 0 %></h1>
+    <h5>Apps Requested</h5>
+    <%= link_to "View", service_requests_path(project_type: "app_development"), class: 'btn btn-primary' %>
+  </div>
+  <div class='col-lg-4 jumbotron'>
+    <h1><%= @requested_websites || 0 %></h1>
+    <h5>Websites Requested</h5>
+    <%= link_to "View", service_requests_path(project_type: "web_development"), class: 'btn btn-primary' %>
+  </div>
+  <div class='col-lg-4 jumbotron'>
+    <h1><%= @requested_consulting || 0 %></h1>
+    <h5>Requested Consultations</h5>
+    <%= link_to "View", service_requests_path(project_type: "consultation"), class: 'btn btn-primary' %>
+  </div>
+</div>
+<div class="row container-fluid">
+  <div class='row container'>
+    <h3>Current Projects</h3>
+  </div>
+  <div class='col-lg-4 jumbotron'>
+    <h1><%= @requested_apps || 0 %></h1>
+    <h5>Apps Requested</h5>
+    <%= link_to "View", service_requests_path(project_type: "app_development"), class: 'btn btn-primary' %>
+  </div>
+  <div class='col-lg-4 jumbotron'>
+    <h1><%= @requested_websites || 0 %></h1>
+    <h5>Websites Requested</h5>
+    <%= link_to "View", service_requests_path(project_type: "web_development"), class: 'btn btn-primary' %>
+  </div>
+  <div class='col-lg-4 jumbotron'>
+    <h1><%= @requested_consulting || 0 %></h1>
+    <h5>Requested Consultations</h5>
+    <%= link_to "View", service_requests_path(project_type: "consultation"), class: 'btn btn-primary' %>
+  </div>
