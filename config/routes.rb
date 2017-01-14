@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :service_requests
-  resources :services
+  resources :services, except: [:new]
   devise_for :clients
   get 'pages/home'
 
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'pages/discussion'
 
-  get 'pages/about'
+  get 'about' => 'pages#about', as: 'about'
 
   devise_for :admins
 

@@ -1,6 +1,7 @@
-<h1>Editing Service</h1>
+<h1>Edit Service</h1>
 
 <%= render 'form', service: @service %>
 
 <%= link_to 'Show', @service %> |
 <%= link_to 'Back', services_path %>
+<%= link_to "Admin Sign Out", destroy_admin_session_path, method: :delete %>

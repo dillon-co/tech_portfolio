@@ -5,6 +5,7 @@ class CreateServiceRequests < ActiveRecord::Migration[5.0]
       t.string :title
       t.string :description
       t.integer :project_type
+      t.integer :project_status
 
       t.timestamps
     end

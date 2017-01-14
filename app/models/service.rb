@@ -18,8 +18,8 @@ class Service < ApplicationRecord
   belongs_to :client
 
   enum project_type: {
-    app_development: 0,
-    web_development: 1,
-    consultation: 2
+    "App Development" => 0,
+    "Web Development" => 1,
+    "Consultation" => 2
   }
 end

@@ -56,8 +56,9 @@ ActiveRecord::Schema.define(version: 20170112221010) do
     t.string   "title"
     t.string   "description"
     t.integer  "project_type"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "project_status"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.index ["client_id"], name: "index_service_requests_on_client_id", using: :btree
   end
 

@@ -1,29 +1,31 @@
 <p id="notice"><%= notice %></p>
+<div class='container'>
+  <h2>
+    <strong><%= @service_request.title.titleize %></strong>
+  </h2>
 
-<p>
-  <strong>Client:</strong>
-  <%= @service_request.client.name %>
-</p>
+  <p>
+    <strong>Requested By:</strong>
+    <%= @service_request.client.name %>
+  </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @service_request.title %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @service_request.description %>
-</p>
+  <h5>
+    <%= @service_request.description %>
+  </h5>
 
-<p>
-  <strong>Project type:</strong>
-  <%= @service_request.project_type %>
-</p>
+  <p>
+    <strong>Project type:</strong>
+    <%= @service_request.project_type %>
+  </p>
 
-<%= link_to 'Edit', edit_service_request_path(@service_request) %> |
-<%= link_to 'Back', service_requests_path %>
-<% if admin_signed_in? %>
-  |<%= link_to 'Accept', accept_project_path(requested_id: @service_request.id), method: :post %>|
-  <%= link_to 'Decline', decline_project_path(requested_id: @service_request.id) %>
+<% if current_client == @service_request.client || admin_signed_in? %>
+  <%= link_to 'Edit', edit_service_request_path(@service_request) %> |
 <% end %>
-| <%= link_to "Sign Out", destroy_client_session_path, method: :delete %>
+  <%= link_to 'Back', service_requests_path %>
+  <% if admin_signed_in? %>
+    | <%= link_to 'Accept', accept_project_path(requested_id: @service_request.id), method: :post %> | 
+    <%= link_to 'Decline', decline_project_path(requested_id: @service_request.id) %>
+  <% end %>
+  | <%= link_to "Sign Out", destroy_client_session_path, method: :delete %>
+</div>

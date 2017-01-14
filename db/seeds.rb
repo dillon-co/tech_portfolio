@@ -6,6 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-client = Client.create(name: "Da Man", email: "cortezdill42@gmail.com",  password: ENV['EMAIL_PASSWORD'])
-service_request = client.service_requests.create(title: "thing", description: "Take My Money", project_type: "app_development")
-admin = Admin.create(name: "Dillon", email: "dilloncortez@gmail.com", password: ENV['EMAIL_PASSWORD'])
+client = Client.create(name: "Da Man",
+                       email: "cortezdill42@gmail.com",
+                       password: ENV['EMAIL_PASSWORD']
+                       )
+client.service_requests.create(title: "thing",
+                               description: "Here's some money",
+                               project_type: "App Development")
+
+
+Admin.create(name: "Dillon",
+             email: "dilloncortez@gmail.com",
+             password: ENV['EMAIL_PASSWORD'])

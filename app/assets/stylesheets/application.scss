@@ -12,3 +12,58 @@
  *
  */
 @import "bootstrap";
+body{
+  font-family: 'Lato';
+}
+// h1,h2,h3,h4,h5,h6,text,input{
+//   font-family: 'Lato';
+// }
+.panel.panel-default{
+  border: 2px solid rgba(0,0,0,0.3);
+  border-radius: 3px;
+  text-align: center;
+}
+
+.project-type-link{
+  a{color: rgba(0,0,0,0.8)}
+}
+
+.title-image{
+  margin-top: 0px;
+  vertical-align: left;
+  vertical-align: top;
+  background-size: cover;
+  background-position: center center;
+  background-image: url('lion_1920_1080.jpg');
+   @media(min-width: 1000px) {
+  // Any CSS in here will only be applied if the screen width is less than or equal to 1200px wide
+    min-height: 600px;
+    background-attachment: fixed;
+  }
+  @media(max-width: 800px){
+    min-height: 200px;
+  }
+  .title-text{
+   /* position: relative;*/
+  //  margin-top: 300px;
+    max-width: 550px;
+    max-height: 180px;
+    h1{
+      color: white;
+      font-size: 55px
+    }
+    border: solid 4px white;
+    border-radius: 3px;
+    border-radius: 3px;
+    margin: auto;
+    text-align: center;
+  }
+}
+
+.work-type{
+  text-align: center;
+  // border: 10px solid rgba(0,0,0,0.8)
+  i{
+    font-size: 150px;
+  }
+}

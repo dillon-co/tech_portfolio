@@ -1,2 +1,24 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class='title-image'>
+  <br><br><br><br><br>
+  <div class='title-text'>
+    <h1>DILLON CORTEZ</h1>
+  </div>
+</div>
+<div class='project-type-link'>
+<%= link_to new_service_request_path do %>
+<div class='row jumbotron'>
+  <div class='col-lg-4 work-type border-right-0'>
+      <i class='material-icons'>&#xE066;</i>
+      <h1>Websites</h1>
+  </div>
+  <div class='col-lg-4 work-type border-left-0 border-right-0'>
+      <i class='material-icons'>&#xE0DE</i>
+      <h1>Apps</h1>
+  </div>
+  <div class='col-lg-4 work-type border-left-0'>
+      <i class='material-icons'>&#xE87B;</i>
+      <h1>Consultting</h1>
+  </div>
+</div>
+<% end %>
+</div>

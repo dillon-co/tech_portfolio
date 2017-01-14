@@ -12,9 +12,9 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @requested_apps = ServiceRequest.where(project_type: "app_development").count
-    @requested_websites = ServiceRequest.where(project_type: "web_development").count
-    @requested_consulting = ServiceRequest.where(project_type: "consultation").count
+    @requested_apps = ServiceRequest.where(project_type: "App Development").count
+    @requested_websites = ServiceRequest.where(project_type: "Web Development").count
+    @requested_consulting = ServiceRequest.where(project_type: "Consultation").count
   end
 
   def accept_project

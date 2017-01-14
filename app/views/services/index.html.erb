@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Services</h1>
+<h1>Projects</h1>
 
 <table>
   <thead>
@@ -18,8 +18,8 @@
   <tbody>
     <% @services.each do |service| %>
       <tr>
-        <td><%= service.title %></td>
-        <td><%= service.project_type %></td>
+        <td><%= service.name %></td>
+        <td><%= service.service_type %></td>
         <td><%= service.hours %></td>
         <td><%= service.description %></td>
         <td><%= service.project_url %></td>
@@ -34,4 +34,10 @@
 
 <br>
 
-<%= link_to 'New Service', new_service_path %>
+<% if client_signed_in? %>
+  <%= link_to 'Request A Project', new_service_request_path %>
+<% elsif admin_signed_in?  %>
+  <%= link_to "Dashboard", dashboard_path %>
+<% else %>
+  <%= link_to 'Request A Project', new_client_session_path %>
+<% end %>

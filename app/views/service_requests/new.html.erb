@@ -1,7 +1,15 @@
-<h1>Request A Service</h1>
+<div class='container container-fluid'>
+<h1>New Project</h1>
 
+<div class='card'>
 <% if client_signed_in? %>
   <%= render 'form', service_request: @service_request %>
 
   <%= link_to 'Back', service_requests_path %>
+  <% else %>
+  <h1><strong>Log in to start a new project!</strong></h1>
+  <h3>Just so I know who you are ;)</h3>
+  <%= link_to "Log In Here", new_client_session_path, class: 'btn btn-success' %>
 <% end %>
+</div>
+</div>

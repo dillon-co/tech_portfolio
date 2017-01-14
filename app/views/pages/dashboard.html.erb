@@ -1,25 +1,40 @@
 <h1>Admin Dashboard</h1>
-<div class="row container-fluid">
-  <div class='row container'>
-    <h3>Project Requests</h3>
-  </div>
-  <div class='col-lg-4 jumbotron'>
-    <h1><%= @requested_apps || 0 %></h1>
-    <h5>Apps Requested</h5>
-    <%= link_to "View", service_requests_path(project_type: "app_development"), class: 'btn btn-primary' %>
-  </div>
-  <div class='col-lg-4 jumbotron'>
-    <h1><%= @requested_websites || 0 %></h1>
-    <h5>Websites Requested</h5>
-    <%= link_to "View", service_requests_path(project_type: "web_development"), class: 'btn btn-primary' %>
-  </div>
-  <div class='col-lg-4 jumbotron'>
-    <h1><%= @requested_consulting || 0 %></h1>
-    <h5>Requested Consultations</h5>
-    <%= link_to "View", service_requests_path(project_type: "consultation"), class: 'btn btn-primary' %>
+<div class="row container">
+  <div class='col-lg-6'>
+    <h1>23 Projects Completed</h1>
   </div>
 </div>
 <div class="row container-fluid">
+  <div class='row container'>
+    <h3>Project Requests</h3>
+    <br><br>
+  </div>
+  <div class='col-lg-4 project-type-link'>
+    <%= link_to service_requests_path(project_type: "app_development") do %>
+      <div class=' panel panel-default'>
+        <h1><%= @requested_apps || 0 %></h1>
+        <h5>Apps Requested</h5>
+      </div>
+    <% end %>
+  </div>
+  <div class='col-lg-4 project-type-link'>
+    <%= link_to service_requests_path(project_type: "web_development") do %>
+      <div class=' panel panel-default'>
+        <h1><%= @requested_websites || 0 %></h1>
+        <h5>Websites Requested</h5>
+      </div>
+    <% end %>
+  </div>
+  <div class='col-lg-4 project-type-link'>
+    <%= link_to service_requests_path(project_type: "consultation") do %>
+      <div class=' panel panel-default'>
+        <h1><%= @requested_consulting || 0 %></h1>
+        <h5>Requested Consultations</h5>
+      </div>
+    <% end %>
+  </div>
+</div>
+<!-- <div class="row container-fluid">
   <div class='row container'>
     <h3>Current Projects</h3>
   </div>
@@ -37,4 +52,4 @@
     <h1><%= @requested_consulting || 0 %></h1>
     <h5>Requested Consultations</h5>
     <%= link_to "View", service_requests_path(project_type: "consultation"), class: 'btn btn-primary' %>
-  </div>
+  </div> -->

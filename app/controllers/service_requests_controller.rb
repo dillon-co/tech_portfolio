@@ -4,7 +4,8 @@ class ServiceRequestsController < ApplicationController
   # GET /service_requests
   # GET /service_requests.json
   def index
-    @service_requests = ServiceRequest.where(project_type: params["project_type"])
+    @project_type = params["project_type"].titleize
+    @service_requests = ServiceRequest.where(project_type: @project_type)
   end
 
   # GET /service_requests/1
@@ -15,7 +16,10 @@ class ServiceRequestsController < ApplicationController
 
   # GET /service_requests/new
   def new
-    @service_request = current_client.service_requests.new
+    if client_signed_in?
+      @service_request = current_client.service_requests.new
+
+    end
   end
 
   # GET /service_requests/1/edit
@@ -25,7 +29,7 @@ class ServiceRequestsController < ApplicationController
   # POST /service_requests
   # POST /service_requests.json
   def create
-    @service_request = ServiceRequest.new(service_request_params)
+    @service_request = current_client.service_requests.new(service_request_params)
 
     respond_to do |format|
       if @service_request.save
